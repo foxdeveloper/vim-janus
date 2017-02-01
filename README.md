@@ -8,7 +8,7 @@ First, install [Janus](https://github.com/carlhuda/janus)
 
 Then:
 
-    git clone git://github.com/ryanmark/janus.git ~/.janus
+    git clone git://github.com/rnagle/janus.git ~/.janus
     cd ~/.janus
     git submodule update --init --recursive
     ln -s ~/.janus/vimrc.after ~/.vimrc.after
