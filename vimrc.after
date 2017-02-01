@@ -8,7 +8,6 @@ au BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile .jshintrc set filetype=json
 au BufRead,BufNewFile *.vcl set filetype=vcl
 au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile *.pde,*.ino set filetype=arduino
 au BufRead,BufNewFile *.jbuilder set filetype=ruby
 
 au BufRead,BufNewFile *nginx* set filetype=nginx
