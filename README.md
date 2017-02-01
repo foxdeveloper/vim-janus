@@ -20,11 +20,35 @@ For powerline (on OS X):
 
     brew install ctags-exuberant
 
-For flake8:
+For flake8 (super nice python syntax checking):
 
-    sudo pip install flake8
+    pip install flake8
+    
+For rubocop (super nice ruby style checking):
 
-And install the font [Hermit](https://pcaro.es/d/otf-hermit-1.21.tar.gz).
+    gem install rubocop
+
+For Arduino integration:
+
+    pip install ino
+
+For find all in project:
+
+    brew install ack
+
+For jscs (javascript style checking):
+
+    npm install -g jscs
+
+For jsonlint (JSON style checking):
+
+    npm install -g jsonlint
+
+## Fonts
+
+Find [powerline-enabled fonts here](https://github.com/powerline/fonts).
+
+Currently using Meslo.
 
 ## Misc.
 
