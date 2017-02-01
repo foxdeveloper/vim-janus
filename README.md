@@ -23,14 +23,10 @@ For powerline (on OS X):
 For flake8 (super nice python syntax checking):
 
     pip install flake8
-    
+
 For rubocop (super nice ruby style checking):
 
     gem install rubocop
-
-For Arduino integration:
-
-    pip install ino
 
 For find all in project:
 
