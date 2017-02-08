@@ -107,3 +107,6 @@ colorscheme solarized
 " Set line length coloring
 execute "set colorcolumn=" . join(range(81,335), ',')
 highlight ColorColumn guibg=#194550
+
+# Turn off json concealing
+let g:vim_json_syntax_conceal = 0
