@@ -55,3 +55,6 @@
 [submodule "vim-json"]
 	path = vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim-hashicorp-tools"]
+	path = vim-hashicorp-tools
+	url = https://github.com/hashivim/vim-hashicorp-tools.git
