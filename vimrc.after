@@ -104,12 +104,11 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 " User EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" Assuming solarized colorscheme
-colorscheme solarized
-
-" Set line length coloring
-execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn guibg=#194550
-
 " Turn off json concealing
 let g:vim_json_syntax_conceal=0
+
+" Let terraform plugin manage tf file formatting
+let g:terraform_align=1
+
+" Run terraform fmt on save for .tf and .tfvars files
+let g:terraform_fmt_on_save=1

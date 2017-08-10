@@ -1,7 +1,14 @@
 syntax enable
+" Assuming solarized colorscheme
+colorscheme solarized
+
+" Set line length coloring
+execute "set colorcolumn=" . join(range(81,335), ',')
+highlight ColorColumn guibg=#194550
 
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h16
 set background=dark
+"set background=light
 "set transparency=8
 set guioptions=egmrt
 "set colorcolumn=100
