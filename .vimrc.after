@@ -1,0 +1,128 @@
+" This makes the cmd-t feature work more good
+let g:ctrlp_working_path_mode = 0
+
+" Force some filetypes to load
+au BufRead,BufNewFile *.html set filetype=htmljinja
+au BufRead,BufNewFile *.wsgi set filetype=python
+au BufRead,BufNewFile *.json set filetype=json
+au BufRead,BufNewFile .jshintrc set filetype=json
+au BufRead,BufNewFile *.vcl set filetype=vcl
+au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.jbuilder set filetype=ruby
+
+au BufRead,BufNewFile *nginx* set filetype=nginx
+au BufRead,BufNewFile *apache* set filetype=apache
+
+" Make sure our tabbing rules are enforced
+au BufRead,BufNewFile * set tw=0 textwidth=0
+au BufEnter *.php setlocal noexpandtab shiftwidth=4 tabstop=4
+au BufEnter *.py setlocal expandtab
+au BufEnter *.wsgi setlocal expandtab
+au BufEnter *.md setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+au BufEnter *.css,*.scss setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au BufEnter *.js setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au BufEnter *.json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au BufEnter *.html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au BufEnter *.rb setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+set wrap
+
+let g:ackprg="ack -H --nocolor --nogroup --column --type-add coffee=.coffee --type-add sass=.sass,.scss --ignore-dir=.bundle --ignore-dir=.sass-cache --ignore-dir=.git --ignore-dir=public/cache"
+
+" global ignores
+set wildignore+=*.o,*.pyc,*.swp,*/.bundle/*,*/.git/*,*.DS*,*/.sass-cache/*
+
+" ignores for cmd+t/ctrl-p
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|build|working|cache|tmp)$',
+  \ 'file': '\v\.(exe|so|dll|jpg|jpeg|png|gif|psd|bz2|gz|zip|ico|tgz)$'
+  \ }
+
+" ignores for NERDTree
+let NERDTreeIgnore=['^\.bundle$','^\.sass-cache$','^\.git$','^\.DS.*$','\.pyc$']
+let NERDTreeShowHidden=1
+
+" Use the fancy symbols. You need to use one of the hacked fonts. Works in Terminal and over ssh.
+let g:airline_powerline_fonts = 1
+" Dunno why I have to specify these
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
+endif
+
+" Enable spell check
+au BufEnter * setlocal nospell
+"au BufEnter *.html,*.html.* setlocal spell spelllang=en_us
+"au BufEnter *.md,*.md.* setlocal spell spelllang=en_us
+"au BufEnter *.txt,*.txt.* setlocal spell spelllang=en_us
+"au BufEnter *.json,*.json.* setlocal spell spelllang=en_us
+"au BufEnter *.xml,*.xml.* setlocal spell spelllang=en_us
+"au BufEnter *.yml,*.yml.* setlocal spell spelllang=en_us
+"au BufEnter *.ini,*.ini.* setlocal spell spelllang=en_us
+"au BufEnter *.csv,*.csv.* setlocal spell spelllang=en_us
+
+set sessionoptions-=options
+
+" Enable mouse in the terminal and over ssh (if it's setup properly)
+set mouse=a
+
+" Moar pretty
+set t_Co=256
+
+" Set terminal title
+let &titlestring=fnamemodify(getcwd(), ":t")
+set t_ts=]1;
+set t_fs=
+set title
+
+" HTML Indenting
+"filetype plugin indent on
+
+" Format CSS
+autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true\ --sort_properties=true
+
+"make esc deselect everything
+"nnoremap <esc> :noh<return><esc>
+
+" Automatically load .lvimrc files
+let g:localvimrc_ask=0
+
+" Disable line length warnings
+"let g:syntastic_python_flake8_args="--ignore=E501"
+
+" Use rubocop
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
+" User EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" Turn off json concealing
+let g:vim_json_syntax_conceal=0
+
+" Let terraform plugin manage tf file formatting
+let g:terraform_align=1
+
+" Run terraform fmt on save for .tf and .tfvars files
+let g:terraform_fmt_on_save=1
+
+" Theme
+colorscheme PaperColor
+set background=dark
+
+" rulers
+let &colorcolumn=join(range(81, 999), ',')
+
+set clipboard=unnamedplus
+set modeline
+set modelines=10
+set list
+set listchars=tab:>-
+set foldlevel=20
+set foldlevelstart=20
