@@ -44,7 +44,6 @@ let NERDTreeShowHidden=1
 
 " Use the fancy symbols. You need to use one of the hacked fonts. Works in Terminal and over ssh.
 let g:airline_powerline_fonts = 1
-"let g:airline_theme=solarized
 " Dunno why I have to specify these
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -60,14 +59,14 @@ endif
 
 " Enable spell check
 au BufEnter * setlocal nospell
-au BufEnter *.html,*.html.* setlocal spell spelllang=en_us
-au BufEnter *.md,*.md.* setlocal spell spelllang=en_us
-au BufEnter *.txt,*.txt.* setlocal spell spelllang=en_us
-au BufEnter *.json,*.json.* setlocal spell spelllang=en_us
-au BufEnter *.xml,*.xml.* setlocal spell spelllang=en_us
-au BufEnter *.yml,*.yml.* setlocal spell spelllang=en_us
-au BufEnter *.ini,*.ini.* setlocal spell spelllang=en_us
-au BufEnter *.csv,*.csv.* setlocal spell spelllang=en_us
+"au BufEnter *.html,*.html.* setlocal spell spelllang=en_us
+"au BufEnter *.md,*.md.* setlocal spell spelllang=en_us
+"au BufEnter *.txt,*.txt.* setlocal spell spelllang=en_us
+"au BufEnter *.json,*.json.* setlocal spell spelllang=en_us
+"au BufEnter *.xml,*.xml.* setlocal spell spelllang=en_us
+"au BufEnter *.yml,*.yml.* setlocal spell spelllang=en_us
+"au BufEnter *.ini,*.ini.* setlocal spell spelllang=en_us
+"au BufEnter *.csv,*.csv.* setlocal spell spelllang=en_us
 
 set sessionoptions-=options
 
@@ -112,3 +111,18 @@ let g:terraform_align=1
 
 " Run terraform fmt on save for .tf and .tfvars files
 let g:terraform_fmt_on_save=1
+
+" Theme
+colorscheme PaperColor
+set background=dark
+
+" rulers
+let &colorcolumn=join(range(81, 999), ',')
+
+set clipboard=unnamedplus
+set modeline
+set modelines=10
+set list
+set listchars=tab:>-
+set foldlevel=20
+set foldlevelstart=20

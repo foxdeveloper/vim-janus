@@ -1,4 +1,26 @@
 set shell=/bin/sh
 let g:syntastic_shell = "/bin/sh"
-let mapleader = "\\"
-let maplocalleader = "\\"
+let mapleader = ";"
+let maplocalleader = ";"
+
+let g:airline_powerline_fonts = 1 " Enable powerline fonts for airline
+let g:nerdtree_tabs_open_on_console_startup = 1 " Enable NERDTree on tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:tagbar_compact=1
+let g:tagbar_width=30
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeWinSize=30
+let &l:updatetime= get(g:, "go_updatetime", 800)
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:jsx_ext_required = 0
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]

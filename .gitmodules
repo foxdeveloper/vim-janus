@@ -58,3 +58,12 @@
 [submodule "vim-hashicorp-tools"]
 	path = vim-hashicorp-tools
 	url = https://github.com/hashivim/vim-hashicorp-tools.git
+[submodule "papercolor-theme"]
+	path = papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "vim-go"]
+	path = vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim-nerdtree-tabs"]
+	path = vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
