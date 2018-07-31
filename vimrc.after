@@ -15,10 +15,10 @@ au BufRead,BufNewFile *apache* set filetype=apache
 
 " Make sure our tabbing rules are enforced
 au BufRead,BufNewFile * set tw=0 textwidth=0
-au BufEnter *.php setlocal noexpandtab shiftwidth=4 tabstop=4
+au BufEnter *.php setlocal expandtab shiftwidth=4 tabstop=4
 au BufEnter *.py setlocal expandtab
 au BufEnter *.wsgi setlocal expandtab
-au BufEnter *.md setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+au BufEnter *.md setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au BufEnter *.css,*.scss setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au BufEnter *.js setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au BufEnter *.json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -126,3 +126,6 @@ set list
 set listchars=tab:>-
 set foldlevel=20
 set foldlevelstart=20
+
+" PHP CS FIXER
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()

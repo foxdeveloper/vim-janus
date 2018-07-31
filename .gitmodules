@@ -67,3 +67,6 @@
 [submodule "vim-nerdtree-tabs"]
 	path = vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim-php-cs-fixer"]
+	path = vim-php-cs-fixer
+	url = git@github.com:stephpy/vim-php-cs-fixer.git
