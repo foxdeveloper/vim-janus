@@ -126,3 +126,11 @@ set list
 set listchars=tab:>-
 set foldlevel=20
 set foldlevelstart=20
+
+augroup nerdtree
+    autocmd!
+    autocmd FileType nerdtree syntax clear NERDTreeFlags
+    " other nerdtree related aucomds
+augroup END
+
+let g:webdevicons_conceal_nerdtree_brackets = o

@@ -73,3 +73,12 @@
 [submodule "ale"]
 	path = ale
 	url = git@github.com:dense-analysis/ale.git
+[submodule "coc.nvim"]
+	path = coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim-nerdtree-syntax-highlight"]
+	path = vim-nerdtree-syntax-highlight
+	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule "vim-devicons"]
+	path = vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons.git

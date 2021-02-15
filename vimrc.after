@@ -1,3 +1,5 @@
+syntax on
+autocmd Syntax nerdtree syntax clear NERDTreeFlags
 " This makes the cmd-t feature work more good
 let g:ctrlp_working_path_mode = 0
 
@@ -128,4 +130,18 @@ set foldlevel=20
 set foldlevelstart=20
 
 " PHP CS FIXER
+let g:php_cs_fixer_rules = "@Symfony,@PSR2"
+let g:php_cs_fixer_config_file = '.php_cs.dist'
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+" ALE
+" global
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+" phpstan
+let g:ale_php_phpstan_configuration = 'phpstan.neon'
+let g:ale_php_phpstan_level = '1'
+
+" phpcsfixer
+let g:ale_fixers = {'php':['php_cs_fixer']}
