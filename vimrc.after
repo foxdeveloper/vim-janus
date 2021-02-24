@@ -130,9 +130,9 @@ set foldlevel=20
 set foldlevelstart=20
 
 " PHP CS FIXER
-let g:php_cs_fixer_rules = "@Symfony,@PSR2"
-let g:php_cs_fixer_config_file = '.php_cs.dist'
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+"let g:php_cs_fixer_config_file = '/home/benjamin/Workspace/Cadoles/mse/.php_cs.dist'
+"let g:php_cs_fixer_verbose = 0
+"autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 " ALE
 " global
@@ -143,5 +143,17 @@ let g:ale_fix_on_save = 1
 let g:ale_php_phpstan_configuration = 'phpstan.neon'
 let g:ale_php_phpstan_level = '1'
 
-" phpcsfixer
-let g:ale_fixers = {'php':['php_cs_fixer']}
+" ALE Fixers
+let g:ale_fixers = {
+  \ 'php':['php_cs_fixer'],
+  \ 'css':['prettier','stylelint'],
+  \ 'scss':['stylelint']
+\}
+
+" vim coc-css
+autocmd FileType scss setl iskeyword+=@-@
+
+" php-documentor
+au BufRead,BufNewFile *.php inoremap <buffer> <C-D> :call PhpDoc()<CR>
+au BufRead,BufNewFile *.php nnoremap <buffer> <C-D> :call PhpDoc()<CR>
+au BufRead,BufNewFile *.php vnoremap <buffer> <C-D> :call PhpDocRange()<CR>

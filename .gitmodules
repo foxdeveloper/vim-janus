@@ -82,3 +82,12 @@
 [submodule "vim-devicons"]
 	path = vim-devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule "pdv"]
+	path = pdv
+	url = git@github.com:tobyS/pdv.git
+[submodule "php-documentor-vim"]
+	path = php-documentor-vim
+	url = git@github.com:sumpygump/php-documentor-vim.git
+[submodule "twig.vim"]
+	path = twig.vim
+	url = git@github.com:nelsyeung/twig.vim.git
